@@ -1,6 +1,7 @@
 import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
 
+//TODO: props가 function일 때 type?
 const NewExpense = (props: any) => {
     const saveExpenseDataHandler = (enteredExpenseData: []) => {
         const expenseData = {

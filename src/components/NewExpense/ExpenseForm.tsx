@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
+//TODO: props type? props는 function을 받음.
 const ExpenseForm = (props: any) => {
     const [enteredTitle, setEnteredTitle] = useState('');
     // initiate with string because when you listen to event for an input element and read vaule of an input element, it will be a string.
@@ -32,6 +33,7 @@ const ExpenseForm = (props: any) => {
         // });
     }
 
+    //TODO: event type? React.FormEvent? React.FormEvent<HTMLFormElement>? React.ChangeEvent<HTMLFormElement>?
     const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
         // prevent the request from being sent by default. Then the page will not reload.
         event.preventDefault();
