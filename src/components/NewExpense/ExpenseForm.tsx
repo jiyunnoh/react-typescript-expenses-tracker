@@ -7,30 +7,16 @@ const ExpenseForm = (props: any) => {
     // initiate with string because when you listen to event for an input element and read vaule of an input element, it will be a string.
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
-    // const [userInput, setUserInput] = useState({
-    //     enteredTitle: '',
-    //     enteredAmount: '',
-    //     enteredDate: '',
-    // });
 
     // react or browser will make sure that we get event object when change event occur in line 13.
     const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setEnteredTitle(event.target.value);
-        // setUserInput((prevState) => {
-        //     return {...prevState, enteredTitle: event.target.value};
-        // });
     }
     const amountChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setEnteredAmount(event.target.value);
-        // setUserInput((prevState) => {
-        //     return {...prevState, enteredAmount: event.target.value};
-        // });
     }
     const dateChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setEnteredDate(event.target.value);
-        // setUserInput((prevState) => {
-        //     return {...prevState, enteredDate: event.target.value};
-        // });
     }
 
     //TODO: event type? React.FormEvent? React.FormEvent<HTMLFormElement>? React.ChangeEvent<HTMLFormElement>?
