@@ -3,7 +3,7 @@ import './NewExpense.css';
 
 //TODO: props가 function일 때 type?
 const NewExpense = (props: any) => {
-    const saveExpenseDataHandler = (enteredExpenseData: []) => {
+    const saveExpenseDataHandler = (enteredExpenseData: object) => {
         const expenseData = {
             ...enteredExpenseData,
             id: Math.random().toString(),
