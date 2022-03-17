@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
 
 //TODO: props가 function일 때 type?
 const NewExpense = (props: any) => {
+    const [isEditing, setIsEditing] = useState(false);
+
     const saveExpenseDataHandler = (enteredExpenseData: object) => {
         const expenseData = {
             ...enteredExpenseData,
@@ -10,11 +13,28 @@ const NewExpense = (props: any) => {
         };
 
         props.onAddExpense(expenseData);
+        setIsEditing(false);
     };
+
+    const startEditingHandler = () => {
+        setIsEditing(true);
+    }
+
+    const stopEditingHandler = () => {
+        setIsEditing(false);
+    }
 
     return (
         <div className='new-expense'>
-            <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+            {!isEditing && (
+                <button onClick={startEditingHandler}>Add New Expense</button>
+            )}
+            {isEditing && (
+                <ExpenseForm
+                    onSaveExpenseData={saveExpenseDataHandler}
+                    onCancel={stopEditingHandler} 
+                />
+            )}
         </div>
     );
 }
