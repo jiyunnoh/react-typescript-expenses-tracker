@@ -3,6 +3,7 @@ import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 import { useState } from 'react';
 
+//TODO: update props type using global custom type.
 const ExpenseItem = (props: { date: Date; title: string; amount: number; }) => {
   const [title, setTitle] = useState(props.title);
 

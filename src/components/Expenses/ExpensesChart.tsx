@@ -1,6 +1,12 @@
 import Chart from "../Chart/Chart"
 
-const ExpensesChart = (props: { expenses: any; }) => {
+//TODO: update expenses type using global custom type.
+const ExpensesChart = (props: { expenses: {
+    id: string;
+    date: Date;
+    title: string;
+    amount: number;
+}[]; }) => {
     const chartDataPoints = [
         { label: 'Jan', value: 0 },
         { label: 'Feb', value: 0 },

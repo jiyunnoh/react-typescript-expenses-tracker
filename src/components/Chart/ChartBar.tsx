@@ -1,5 +1,6 @@
 import './ChartBar.css';
 
+//TODO: update props type using global custom type.
 const ChartBar = (props: { value: number; maxValue: number; label: string; }) => {
     let barFillHeight = '0%';
 

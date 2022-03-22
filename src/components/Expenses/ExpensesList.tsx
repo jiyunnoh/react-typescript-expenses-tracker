@@ -1,7 +1,7 @@
 import './ExpensesList.css';
 import ExpenseItem from "./ExpenseItem";
 
-//TODO: props type??
+//TODO: update items type using global custom type.
 const ExpensesList = (props: { items: { id: string; title: string; amount: number; date: Date; }[]; }) => {
     if (props.items.length === 0) {
         return <h2 className='expenses-list__fallback'>Found no expenses.</h2>

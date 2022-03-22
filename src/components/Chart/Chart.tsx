@@ -1,7 +1,8 @@
 import './Chart.css';
 import ChartBar from './ChartBar';
 
-const Chart = (props: { dataPoints: any[]; }) => {
+//TODO: update dataPoints type using global custom type.
+const Chart = (props: { dataPoints: { key: string; value: number; maxValue: number; label: string; }[]; }) => {
     const dataPointValues = props.dataPoints.map(dataPoint => dataPoint.value);
     const totalMaximum = Math.max(...dataPointValues);
     return (

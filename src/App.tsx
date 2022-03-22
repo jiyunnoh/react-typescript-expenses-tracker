@@ -13,7 +13,6 @@ const INITIAL_DATA = [
 const App = () => {
   const [expenses, setExpenses] = useState(INITIAL_DATA);
 
-  //TODO: expense type? id는 왜 있지?
   const addExpenseHandler = (expense: { id: string; title: string; amount: number; date: Date; }) => {
     setExpenses(prevExpenses => {
       return [expense, ...prevExpenses];

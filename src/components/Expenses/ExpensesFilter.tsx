@@ -1,9 +1,11 @@
+import React from 'react';
 import './ExpensesFilter.css';
 
-//TODO: props type
-const ExpensesFilter = (props: any) => {
-  //TODO: event type
-  const dropdownChangeHandler = (event: any) => {
+const ExpensesFilter = (props: { 
+  onChangeFilter: (arg: string) => void; 
+  selected: string; 
+}) => {
+  const dropdownChangeHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
     props.onChangeFilter(event.target.value);
   }
   return (

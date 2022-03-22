@@ -5,10 +5,11 @@ import ExpensesChart from "./ExpensesChart";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
 
-const Expenses = (props: { item: { id: string; date: any; title: string; amount: number; }[]; }) => {
+//TODO: update item type using global custom type.
+const Expenses = (props: { item: { id: string; date: Date; title: string; amount: number; }[]; }) => {
     const [filteredYear, setFilteredYear] = useState('2020');
 
-    const filterChangeHandler = (selectedYear: any) => {
+    const filterChangeHandler = (selectedYear: string) => {
         setFilteredYear(selectedYear);
     }
 

@@ -2,17 +2,26 @@ import { useState } from 'react';
 import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
 
-//TODO: props가 function일 때 type?
-const NewExpense = (props: any) => {
+//TODO: how to export this to another file to be used globally.
+type Expense = {
+    id: string;
+    title: string;
+    amount: number;
+    date: Date;
+}
+
+const NewExpense = (props: { onAddExpense: (arg: Expense) => void }) => {
+// const NewExpense = ({ onAddExpense }: { onAddExpense: (arg: Expense) => void }) => {
     const [isEditing, setIsEditing] = useState(false);
 
-    const saveExpenseDataHandler = (enteredExpenseData: object) => {
+    const saveExpenseDataHandler = (enteredExpenseData: { title: string; amount: number; date: Date; }) => {
         const expenseData = {
             ...enteredExpenseData,
             id: Math.random().toString(),
         };
 
         props.onAddExpense(expenseData);
+        // onAddExpense(expenseData);
         setIsEditing(false);
     };
 
@@ -32,7 +41,7 @@ const NewExpense = (props: any) => {
             {isEditing && (
                 <ExpenseForm
                     onSaveExpenseData={saveExpenseDataHandler}
-                    onCancel={stopEditingHandler} 
+                    onCancel={stopEditingHandler}
                 />
             )}
         </div>
